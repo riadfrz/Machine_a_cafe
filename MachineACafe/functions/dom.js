@@ -5,7 +5,6 @@
  * @property {number} duree
  */
 
-
 /**
  *
  * @param {string} tagName
@@ -28,9 +27,9 @@ export function createElement(tagName, attributes = {}) {
  */
 export async function injectElements(lesEtapes, laListe) {
     for (let value of Object.values(lesEtapes)) {
-        await delay(value.duree)
+        await delay(value.duree);
         let liListe = createElement('li')
-        liListe.innerText = value.title
+        liListe.innerText = value.Title
         laListe.append(liListe)
     }
 }
@@ -54,7 +53,7 @@ export function renewTag(tagName) {
  * @return {Promise<unknown>}
  */
 function delay(duree) {
-    duree =  duree || 2000;
+    duree = duree || 2000;
     return new Promise(resolve => {
         setTimeout(() => {
             resolve()
